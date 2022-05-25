@@ -125,26 +125,25 @@ toast.error({ message: 'A error message' });
 By default, the message is shown in 3000ms. You can adjust this by providing `duration` property when invoking a method:
 
 ```ts
-// default duration is 3000ms
+// Default duration is 3000ms
 toast.success({ message: 'hello, world' });
 
-// set duration to 5000ms
-// (i.e., the message disappears automatically after 5000ms)
+// Set duration to 5000ms
+// (i.e., the message disappears automatically after 5000ms).
 toast.success({
   message: 'hello, world',
   duration: 5000
 });
 
-// maximum duration is 2,147,483,647ms
-// because the library is using setTimeout internally
+// Maximum duration is 2,147,483,647ms
+// because the library is using setTimeout internally.
 toast.success({
   message: 'hello, world',
   duration: 2147483647 // maximum duration
 });
 
-// so if the given duration is greater than 2^31 - 1,
-// it won't work correctly
-
+// So if the given duration is greater than 2^31 - 1,
+// it won't work correctly.
 toast.success({
   message: 'hello, world',
   duration: 2147483648 // Oops!
@@ -158,20 +157,19 @@ There are total of 6 positions message can appear:
 - `topLeft`
 - `topCenter`
 - `topRight`
-- `bottomLEft`
+- `bottomLeft`
 - `bottomCenter`
 - `bottomRight`
 
 You can set position of a message by providing `position` property. The default position is `topLeft`.
 
 ```ts
-// default position is topLeft
+// Default position is topLeft.
 toast.success({
   message: 'hello, world'
 });
 
-// set position to topRight
-// default is 0 (i.e. you can show an infinite number of messages)
+// Set position to topRight.
 toast.success({
   message: 'hello, world',
   position: 'topRight'
@@ -185,28 +183,28 @@ You can set the maximum number of messages per position by providing `maxNumOfMe
 The default is `0`, which means there's no limit on number of messages per position.
 
 ```ts
-// default is 0 (i.e. you can show an infinite number of messages)
+// Default is 0 (i.e. you can show an infinite number of messages).
 toast.success({
   message: 'hello, world'
 });
 
-// set max num of messages to 5 in the topLeft position
+// Set max num of messages to 5 in the topLeft position.
 toast.success({
   message: 'hello, world',
   maxNumOfMessages: 5
 });
 
-// set max num of messages to 3 in the bottomCenter position
+// Set max num of messages to 3 in the bottomCenter position.
 toast.success({
   message: 'hello, world',
   position: 'bottomCenter',
   maxNumOfMessages: 3
 });
 
-// of course you can set max num of messages to different position simultaneously
-// here, we set max num to 3 in topCenter and 5 in bottomLeft
+// Of course you can set max num of messages in different position simultaneously.
+// Here, we set max num to 3 in topCenter and 5 in bottomLeft
 // so up to 3 messages will appear on topCenter position
-// while up to 5 messages will appear on bottomLeft position
+// while up to 5 messages will appear on bottomLeft position.
 toast.success({
   message: 'hello, world',
   position: 'topCenter',
