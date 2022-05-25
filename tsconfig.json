@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "target": "ES6",
+    "module": "ES6",
+    "strict": true,
+    "jsx": "react-jsx",
+    "declaration": true,
+    "esModuleInterop": true,
+    "outDir": "dist/esm",
+    "moduleResolution": "node",
+    "strictPropertyInitialization": false
+  },
+  "include": [
+    "src"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "*.js",
+    "*.d.ts"
+  ]
+}
