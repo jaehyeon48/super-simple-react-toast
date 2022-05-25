@@ -66,18 +66,18 @@ Lastly, `useToast` inside of a component and invoke a method of a message type y
 import { useToast } from 'super-simple-react-toast';
 
 function Example() {
-	const toast = useToast();
+  const toast = useToast();
 
-	const notifySuccessMessage = () =>
-		toast.success({
-			message: 'Hello, world!'
-		});
+  const notifySuccessMessage = () =>
+    toast.success({
+      message: 'Hello, world!'
+  });
 
-	return (
-		<div>
-			<button onClick={notifySuccessMessage}>Success Message</button>
-		</div>
-	);
+  return (
+    <div>
+      <button onClick={notifySuccessMessage}>Success Message</button>
+    </div>
+  );
 }
 ```
 
