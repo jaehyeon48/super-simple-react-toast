@@ -22,8 +22,14 @@ export default class Toast {
 	#defaultMaxNumOfMessages: number;
 
 	constructor(rootElement: HTMLElement | null) {
-		if (!rootElement) throw new Error('Toast root element does not exist');
-		this.#rootElem = rootElement;
+		if (!rootElement) {
+			const toastRoot = document.createElement('div');
+			toastRoot.setAttribute('id', 'toast-root');
+			document.body.appendChild(toastRoot);
+			this.#rootElem = toastRoot;
+		} else {
+			this.#rootElem = rootElement;
+		}
 		this.#defaultDuration = 3000;
 		this.#messages = new Map(positions.map(position => [position, []]));
 		this.#defaultMaxNumOfMessages = 0;

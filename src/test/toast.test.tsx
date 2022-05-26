@@ -61,3 +61,13 @@ describe('custom duration (5000ms) messages', () => {
 		expect(toastRootElem.querySelector('[aria-label="Toast success message"]')).toBe(null);
 	});
 });
+
+test('If instantiated with an non-existence element, create a new <div id="toast-root"></div> element', () => {
+	const toast = new Toast(null);
+	toast.success({
+		message: 'This is a success message',
+		duration: 5000
+	});
+
+	expect(document.querySelector('[aria-label="Toast success message"]')).not.toBe(null);
+});

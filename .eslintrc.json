@@ -42,6 +42,7 @@
     "react/jsx-no-bind": "off",
     "@typescript-eslint/no-explicit-any": "off",
     "max-classes-per-file": "off",
-    "no-constructor-return": "off"
+    "no-constructor-return": "off",
+    "@typescript-eslint/no-shadow": "off"
   }
 }

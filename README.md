@@ -60,6 +60,8 @@ export default function App() {
 }
 ```
 
+If you provide an element that does not exist, the library creates `<div id="toast-root"></div>` element into your HTML's `<body>` element and use it as a toast root element.
+
 Lastly, `useToast` inside of a component and invoke a method of a message type you want to notify:
 
 ```tsx
