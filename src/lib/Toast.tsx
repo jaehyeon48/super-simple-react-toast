@@ -1,7 +1,7 @@
 import { nanoid } from 'nanoid';
-import { render } from 'react-dom';
 import Toasts from './Toasts';
 import { Message, ToastPosition, ToastArgs } from './types';
+import renderWithGlobalStyle from './renderWithGlobalStyle';
 
 const positions = [
 	'topLeft',
@@ -42,7 +42,7 @@ export default class Toast {
 		if (indexToDelete === -1) return;
 
 		(this.#messages.get(position) as Message[]).splice(indexToDelete, 1);
-		render(
+		renderWithGlobalStyle(
 			<>
 				{positions.map(pos => (
 					<Toasts
@@ -91,7 +91,7 @@ export default class Toast {
 			duration
 		});
 
-		render(
+		renderWithGlobalStyle(
 			<>
 				{positions.map(pos => (
 					<Toasts
@@ -122,7 +122,7 @@ export default class Toast {
 			duration
 		});
 
-		render(
+		renderWithGlobalStyle(
 			<>
 				{positions.map(pos => (
 					<Toasts
@@ -153,7 +153,7 @@ export default class Toast {
 			duration
 		});
 
-		render(
+		renderWithGlobalStyle(
 			<>
 				{positions.map(pos => (
 					<Toasts
@@ -184,7 +184,7 @@ export default class Toast {
 			duration
 		});
 
-		render(
+		renderWithGlobalStyle(
 			<>
 				{positions.map(pos => (
 					<Toasts
