@@ -35,7 +35,7 @@ export default class Toast {
 		this.#defaultMaxNumOfMessages = 0;
 	}
 
-	#closeMessage(idToDelete: string, position: ToastPosition) {
+	#closeMessage = (idToDelete: string, position: ToastPosition) => {
 		const indexToDelete = (this.#messages.get(position) as Message[]).findIndex(
 			({ id }) => id === idToDelete
 		);
@@ -49,13 +49,13 @@ export default class Toast {
 						key={pos}
 						position={pos}
 						messages={this.#messages.get(pos) as Message[]}
-						closeMessage={this.#closeMessage.bind(this)}
+						closeMessage={this.#closeMessage}
 					/>
 				))}
 			</>,
 			this.#rootElem
 		);
-	}
+	};
 
 	#autoCloseMessage(duration: number, position: ToastPosition, id: string) {
 		setTimeout(
@@ -98,7 +98,7 @@ export default class Toast {
 						key={pos}
 						position={pos}
 						messages={this.#messages.get(pos) as Message[]}
-						closeMessage={this.#closeMessage.bind(this)}
+						closeMessage={this.#closeMessage}
 					/>
 				))}
 			</>,
@@ -129,7 +129,7 @@ export default class Toast {
 						key={pos}
 						position={pos}
 						messages={this.#messages.get(pos) as Message[]}
-						closeMessage={this.#closeMessage.bind(this)}
+						closeMessage={this.#closeMessage}
 					/>
 				))}
 			</>,
@@ -160,7 +160,7 @@ export default class Toast {
 						key={pos}
 						position={pos}
 						messages={this.#messages.get(pos) as Message[]}
-						closeMessage={this.#closeMessage.bind(this)}
+						closeMessage={this.#closeMessage}
 					/>
 				))}
 			</>,
@@ -191,7 +191,7 @@ export default class Toast {
 						key={pos}
 						position={pos}
 						messages={this.#messages.get(pos) as Message[]}
-						closeMessage={this.#closeMessage.bind(this)}
+						closeMessage={this.#closeMessage}
 					/>
 				))}
 			</>,
